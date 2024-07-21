@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "projeto-tela-login-react-native",
+    "slug": "snack-1f2e2206-b1ac-47dc-959c-10fbc305bc2d",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "Projeto de Tela de login usando React Native para conclusão de trabalho da Discplina de Programação para Dispositivos Móveis I - IFPI"
+  }
+}
