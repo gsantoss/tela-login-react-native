@@ -1,11 +1,88 @@
-# Sample Snack app
+# Tela de Login em React Native
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+Este é um aplicativo simples de tela de login utilizando React Native e Expo. A tela de login contém dois campos de texto (um para o usuário e outro para a senha) e um botão de login. Flexbox é utilizado para organizar os elementos de maneira responsiva e centralizada na tela.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+## Visão Geral
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+Este projeto demonstra como criar uma interface de login básica em React Native, utilizando Flexbox para layout. O projeto é ideal para iniciantes que desejam aprender sobre layouts responsivos e como gerenciar estados em React Native.
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+## Funcionalidades
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+- Campo de texto para usuário.
+- Campo de texto para senha (com ocultação de texto).
+- Botão de login que exibe um alerta com os valores inseridos.
+
+## Tecnologias Utilizadas
+
+- React Native
+- Expo
+- Flexbox para layout
+
+## Como Executar no Expo Snack
+
+Para rodar este projeto no [Expo Snack](https://snack.expo.dev), siga as instruções abaixo:
+
+1. Acesse [Expo Snack](https://snack.expo.dev).
+2. Copie e cole o código abaixo na janela do editor.
+3. Clique em "Save" e depois em "Run" para ver o aplicativo em execução.
+
+### Código do Projeto
+
+```jsx
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+
+export default function App() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    // Lógica de login pode ser adicionada aqui
+    alert(`Usuário: ${username}, Senha: ${password}`);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Login</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Usuário"
+        value={username}
+        onChangeText={setUsername}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
+      <Button title="Login" onPress={handleLogin} />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#f0f0f0',
+  },
+  title: {
+    fontSize: 24,
+    marginBottom: 16,
+    fontWeight: 'bold',
+  },
+  input: {
+    width: '80%',
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 4,
+    paddingHorizontal: 8,
+    marginBottom: 16,
+    backgroundColor: '#fff',
+  },
+});
